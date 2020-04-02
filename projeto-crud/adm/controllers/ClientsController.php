@@ -7,6 +7,10 @@ class ClientsController{
         require_once("models/ClientsModel.php");
     }
 
+    public function index(){
+        $this -> listClients();
+    }
+
     public function listClients(){
         $ClientModel = new ClientsModel();
         $ClientModel -> listClients();

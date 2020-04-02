@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
            <nav class="col-md-12 navbar navbar-expand-md navbar-light">
-           <a class="navbar-brand" href="index.php?c=home">Leonardo Seixas</a>
+           <a class="navbar-brand" href="?c=s&a=home">Leonardo Seixas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>

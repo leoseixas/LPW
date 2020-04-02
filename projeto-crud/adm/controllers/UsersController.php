@@ -23,5 +23,9 @@
             }
 
         }
+        
+        public function index(){
+            require("models/UsersModel.php");
+        }
     }
 ?>
