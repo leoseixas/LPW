@@ -10,8 +10,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>Index</title>
 </head>
-<body>
-    <div class="container-fluid">
+<body >
+    <div class="container-fluid" id="teste">
         <div class="row">
            <nav class="col-md-12 navbar navbar-expand-md navbar-light">
            <a class="navbar-brand" href="?c=s&a=home">Leonardo Seixas</a>

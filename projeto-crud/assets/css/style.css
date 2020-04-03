@@ -1,3 +1,4 @@
+
 .navbar-brand{
     color: #fff !important;
 }
@@ -22,10 +23,18 @@
     text-align: center;
 }
 
+html, body {height:100%;}
+
+#teste{
+    min-width: 100%;
+    position: relative;
+    
+}
+
 
 footer{
     text-align: center;
     background-color: gray;
-    
+ 
 }
 

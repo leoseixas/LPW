@@ -1,10 +1,13 @@
 <?php
 class ClientsController{
+    var $ClientModel;
+
     function __construct(){
         if(!isset($_SESSION["login"])){
             header("Location: index.php?c=m&a=l");
         }
         require_once("models/ClientsModel.php");
+        $this -> ClientModel = new ClientsModel();
     }
 
     public function index(){
@@ -12,9 +15,8 @@ class ClientsController{
     }
 
     public function listClients(){
-        $ClientModel = new ClientsModel();
-        $ClientModel -> listClients();
-        $result = $ClientModel -> getConsult();
+        $this -> ClientModel -> listClients();
+        $result = $this -> ClientModel -> getConsult();
 
         $arrayClients = array();
 
@@ -38,23 +40,20 @@ class ClientsController{
     public function addClients()
     {
         $arrayClients = array();
-
         $arrayClients["nome"] = $_POST["nome"];
         $arrayClients["endereco"] = $_POST["endereco"];
         $arrayClients["email"] = $_POST["email"];
         $arrayClients["telefone"] = $_POST["telefone"];
 
-        $ClientModel = new clientsModel();
-        $ClientModel -> adicionarCliente($arrayClients);
+        $this -> ClientModel -> adicionarCliente($arrayClients);
 
         $this -> listClients();
     }
 
     public function editarClientsForm($idCliente)
     {
-        $ClientModel = new clientsModel();
-        $ClientModel -> consultClients($idCliente);   
-        $result = $ClientModel -> getConsult();
+        $this -> ClientModel -> consultClients($idCliente);   
+        $result = $this -> ClientModel -> getConsult();
 
         if($arrayClients = $result -> fetch_assoc()){
             require_once("views/Header.php");
@@ -70,14 +69,12 @@ class ClientsController{
         $arrayClients["email"]     = $_POST["email"];
         $arrayClients["telefone"]  = $_POST["telefone"];
 
-        $ClientModel = new clientsModel();
-        $ClientModel -> editarClients($arrayClients);
+        $this -> ClientModel -> editarClients($arrayClients);
         $this ->listClients();
     }
 
     public function deletarClients($idCliente){
-        $ClientModel = new clientsModel();
-        $ClientModel -> deleteClients($idCliente);
+        $this -> ClientModel -> deleteClients($idCliente);
         $this -> listClients();
     }
 }
