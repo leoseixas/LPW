@@ -17,10 +17,10 @@ class ClientsModel{
         $this -> result = $this -> conn -> query($sql);
     }
 
-    public function getConsult()
-    {
-        return $this -> result;
-    }
+        public function getConsult()
+        {
+            return $this -> result;
+        }
 
     public function consultClients($idCliente)
     {

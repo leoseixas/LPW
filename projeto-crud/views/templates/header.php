@@ -33,10 +33,10 @@
                         <a class="nav-link" href="?c=s&a=contato">Contato</a>
                     </li>   
                     <li class="nav-item">
-                        <a class="nav-link" href="?c=c&a=cc">Cadastro</a>
+                        <a class="nav-link" href="?c=c&a=uf">Cadastro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?c=c&a=lc">lista</a>
+                        <a class="nav-link" href="?c=c&a=ul">lista</a>
                     </li>    
                     </ul>
                 </div>             

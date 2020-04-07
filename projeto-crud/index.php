@@ -11,38 +11,24 @@
                     require_once('controllers/site.php');
                     $site = new siteController();
                     switch ($_REQUEST['a']) {
-                        case 'home':
-                            $site -> home();
-                        break;
-                        
-                        case 'contato':
-                            $site -> contato();
-                        break;
-                        
-                        case 'sobre':
-                            $site -> sobre();
-                        break;
-
-                        case 'prod':
-                            $site -> produto();
-                        break;
+                        case 'home': $site -> home(); break;
+                        case 'contato': $site -> contato(); break;
+                        case 'sobre': $site -> sobre(); break;
+                        case 'prod': $site -> produto(); break;
                     }
                     break;
                 
                 case 'c':
-                    require_once("controllers/clientes.php");
-                    $cliente = new clientesController();
+                    require_once("controllers/usuariosController.php");
+                    $Users = new UsuariosController();
                     
                     if(!isset($_GET['a'])){
-                        //$cliente -> home();
+                        $Users -> formCadastro();
                     }else{
                         switch($_REQUEST['a']){
-                            case 'cc': $cliente -> formCadastro();
-                            break;
-                            case 'cca': $cliente -> cadastroCliente();
-                            break;
-                            case 'lc': $cliente -> listaClientes();
-                            break;   
+                            case 'uf': $Users -> formCadastro(); break;
+                            case 'uca': $Users -> cadastrarUsuario(); break;
+                            case 'ul': $Users -> listarUsuarios(); break;   
                         }
                     }
                 break;
