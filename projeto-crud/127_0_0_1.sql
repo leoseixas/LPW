@@ -68,13 +68,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`idUsuario`, `nome`, `login`, `senha`) VALUES
 (1, 'leo', 'leo', '1234'),
-(26, 'anderson', 'vidal', '1234'),
-(25, 'jorge', 'jorge', '1234'),
-(24, 'jorge', 'jorge', '1234'),
-(23, 'teste', 'testee', '1234'),
-(21, ' wçltkq]', 'leo', '1234'),
-(20, 'sdfvsa', 'leo', '1234'),
-(22, 'testeJorge', 'testeJorge', '1234');
+(26, 'teste', 'teste', '1234');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
