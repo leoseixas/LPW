@@ -33,10 +33,13 @@
                         <a class="nav-link" href="?c=s&a=contato">Contato</a>
                     </li>   
                     <li class="nav-item">
-                        <a class="nav-link" href="?c=c&a=uf">Cadastro</a>
+                        <a class="nav-link" href="?c=l&a=l">Lista Cliente</a>
+                    </li>   
+                    <li class="nav-item">
+                        <a class="nav-link" href="?c=c&a=uf">Cadastro ADM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?c=c&a=ul">lista</a>
+                        <a class="nav-link" href="?c=c&a=ul">lista ADM</a>
                     </li>    
                     </ul>
                 </div>             

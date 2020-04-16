@@ -32,6 +32,14 @@
                         }
                     }
                 break;
+                
+                case 'l':
+                    require_once("controllers/clientsController.php");
+                    $Client = new clientsController();
+                    switch($_REQUEST['a']){
+                        case 'l': $Client -> listClients();break;
+                    }
+
             }
         }
     
