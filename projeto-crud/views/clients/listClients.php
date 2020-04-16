@@ -6,7 +6,6 @@
         <th>Email</th>
         <th>Endereço</th>
         <th>Telefone</th>
-        <th>Editar/Deletar</th>
     </tr>
 
 
