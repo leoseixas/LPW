@@ -45,12 +45,16 @@
                     $Client -> index();
                 }else{
                     switch($_REQUEST['a']){
-                        case 'lc': $Client -> listClients(); break;
-                        case 'adf': $Client -> addClientsForm(); break;
-                        case 'ad' : $Client -> addClients(); break;
-                        case 'ecf': $idCliente=$_GET['id']; $Client -> editarClientsForm($idCliente); break;
-                        case 'ec': $Client -> editarClients(); break;
-                        case 'dc' : $idCliente=$_GET['id']; $Client -> deletarClients($idCliente); break;
+                        case 'lc'  : $Client -> listClients(); break;
+                        case 'adf' : $Client -> addClientsForm(); break;
+                        case 'ad'  : $Client -> addClients(); break;
+                        case 'ecf' : $idCliente=$_GET['id']; $Client -> editarClientsForm($idCliente); break;
+                        case 'ec'  : $Client -> editarClients(); break;
+                        case 'dc'  : $idCliente=$_GET['id']; $Client -> deletarClients($idCliente); break;
+                        case 'lfc' : $idCliente=$_GET['id']; $Client -> listFileClient($idCliente); break;
+                        case 'ufc' : $idCliente=$_GET['id']; $Client -> uploadFileClient($idCliente); break;
+                        case 'ufcs': $idCliente=$_GET['id']; $Client -> uploadFileClientAction($idCliente); break;
+                        case 'dfc' : $idCliente=$_GET['id']; $Client -> deleteFilesClient($idCliente); break;
                     }
                 }
             break;

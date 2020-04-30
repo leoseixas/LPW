@@ -17,10 +17,10 @@ class ClientsModel{
         $this -> result = $this -> conn -> query($sql);
     }
 
-        public function getConsult()
-        {
-            return $this -> result;
-        }
+    public function getConsult()
+    {
+        return $this -> result;
+    }
 
     public function consultClients($idCliente)
     {
@@ -33,7 +33,10 @@ class ClientsModel{
         $sql = "INSERT INTO clientes(nome, endereco, email, telefone)
         VALUE ('".$arrayClients['nome']."', '".$arrayClients['endereco']."',
          '".$arrayClients['email']."', '".$arrayClients['telefone']."');";
-         $this -> result = $this -> conn -> query($sql);
+         $this -> conn -> query($sql);
+         $this -> result = $this -> conn -> insert_id;
+         
+         
     }
 
     public function editarClients($arrayClients)
@@ -46,6 +49,7 @@ class ClientsModel{
         WHERE idCliente = ".$arrayClients['idCliente'].";";
 
         $this -> result = $this -> conn -> query($sql);
+        
     }
 
     public function deleteClients($idCliente)
