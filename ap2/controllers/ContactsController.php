@@ -42,7 +42,7 @@
 
             if($signature == $valid){ 
                 $_payload = base64_decode($payload);
-                echo (".$_payload.'");
+                //echo (".$_payload.'");
                 $user = json_decode($_payload); 
                                 
                 if ($user->{'admin'} == true){
@@ -58,12 +58,12 @@
                     header('Content-Type: application/json');
                     echo json_encode($arrayContacts);   
                 }else{
-                    echo 'invalid';
+                    echo 'Usuario invalid';
                 }
                                               
            
             }else{
-            echo 'invalid';
+            echo 'token invalid';
             }            
         }
 
