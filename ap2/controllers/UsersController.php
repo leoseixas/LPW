@@ -27,7 +27,7 @@
                  $header = str_replace(['+', '/', '='], ['-', '_', ''], $header); //base64url
                  
                  $payload = [
-                    'iss' => 'localhost',
+                    'idUser ' => $user['idUser'],
                     'name'=> $user['name'],
                     'user' => $user['user'],
                     'password' => $user['password'],

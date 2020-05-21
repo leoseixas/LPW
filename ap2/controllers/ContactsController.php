@@ -29,7 +29,7 @@
 
             $token = str_replace("Bearer ", "", $token); //se tiver o prefixo "Bearer" remover
 
-            var_dump($token);
+            //var_dump($token);
 
             $part = explode(".",$token);
             $header = $part[0];
@@ -40,19 +40,27 @@
             $valid = base64_encode($valid);
             $valid = str_replace(['+', '/', '='], ['-', '_', ''], $valid); //base64url
 
-            if($signature == $valid){
-              
+            if($signature == $valid){ 
+                $_payload = base64_decode($payload);
+                echo (".$_payload.'");
+                $user = json_decode($_payload); 
+                                
+                if ($user->{'admin'} == true){
+                
                     $this -> ContatcModel -> listContact();
                     $result = $this -> ContatcModel -> getConsult();
-
+    
                     $arrayContacts = array();
-
+    
                     while($line = $result->fetch_assoc()){
                         array_push($arrayContacts,$line);
                     }
                     header('Content-Type: application/json');
-                    echo json_encode($arrayContacts);                        
-                
+                    echo json_encode($arrayContacts);   
+                }else{
+                    echo 'invalid';
+                }
+                                              
            
             }else{
             echo 'invalid';
