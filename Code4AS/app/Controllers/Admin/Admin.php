@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Controllers\Admin;
+use CodeIgniter\Controller;
+
+class Admin extends Controller{
+    
+    public function index()
+    {
+        $session = \Config\Services::session();
+        if($session->has('user')):
+            echo view('admin/templates/header');
+            echo view('admin/templates/home');
+            echo view('admin/templates/footer');
+        else:
+            $this->login();
+        endif;    
+    }
+
+    public function login()
+    {
+        echo view('admin/users/login');
+    }
+
+    public function logout()
+    {
+        $session = \Config\Services::session();
+        $session->destroy();
+        return redirect()->route('admin');
+    }
+}

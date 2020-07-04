@@ -1,0 +1,40 @@
+
+.navbar-brand{
+    color: #fff !important;
+}
+
+.navbar-light{
+    background-color: #008ae5;
+}
+
+.navbar-nav li a{
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover{
+    color: #000 !important;
+}
+
+.navbar-toggler-icon  {
+    color:#fff;
+}
+
+.texto{
+    text-align: center;
+}
+
+html, body {height:100%;}
+
+#teste{
+    min-width: 100%;
+    position: relative;
+    
+}
+
+
+footer{
+    text-align: center;
+    background-color: gray;
+ 
+}
+
