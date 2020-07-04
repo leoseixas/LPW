@@ -28,9 +28,16 @@
             $this -> result = $this -> conn -> query($sql);
         }
 
+        public function getContacts($idUser)
+        {
+        $sql = 'SELECT * FROM contacts WHERE idUser = "'.$idUser.'"';
+            $this -> result = $this -> conn -> query($sql);
+        }
+
+
         public function getConsult()
-    {
-        return $this -> result;
-    }
+        {
+            return $this -> result;
+        }
     }
 ?>

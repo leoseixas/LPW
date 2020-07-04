@@ -1,7 +1,8 @@
+<?php var_dump($clients);?>
 <h1><?=$title?></h1>
 
 <div class="col-md-12">
-    <form method="GET" action="<?=base_url("admin/clients/")?>" 
+    <form method="GET" action="<?=base_url("admin/clients/search-action")?>" 
     enctype="multipart/form-data">  
     <div class="form-group">
         <label form="nome">Nome</label>
@@ -11,7 +12,6 @@
         <button type="submit" class="btn btn-primary col-md-2">Procurar</button>
     </form>
 </div>
-
 <table class="table table-striped">
     <tr>
         <th>Id</th>

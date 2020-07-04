@@ -27,9 +27,15 @@ class ClientsController{
         $this -> ClientModel -> consultClients($idCliente);
         $result = $this -> ClientModel -> getConsult();
 
-        $client = $result->fetch_assoc();
-        header('Content-Type: application/json');
-        echo json_encode($client);
+        if($client = $result->fetch_assoc()){
+            header('Content-Type: application/json');
+            echo json_encode($client);
+        }else{
+            header('Content-Type: application/json');
+            echo('{"result":"null"}');
+            http_response_code(400);
+        }
+
     }
 
     public function addClients()
@@ -44,7 +50,7 @@ class ClientsController{
         $this -> ClientModel -> adicionarCliente($arrayClients);
         
         header('Content-Type: application/json');
-        echo('{"result":"true"}');     
+        echo json_encode($client);   
     }
 
     
@@ -59,11 +65,29 @@ class ClientsController{
         $arrayClients["telefone"]  = $client -> telefone;
 
         $this -> ClientModel -> editarClients($arrayClients);
+        header('Content-Type: application/json');
+        echo json_encode($client);
     }
 
     public function deletarClients($idCliente){
-        $this -> ClientModel -> deleteClients($idCliente);
 
+        $this -> ClientModel -> consultClients($idCliente);
+        $result = $this -> ClientModel -> getConsult();
+
+        if($client = $result->fetch_assoc()){
+            $this -> ClientModel -> deleteClients($idCliente);
+            header('Content-Type: application/json');
+            echo json_encode($client);
+        }else{
+            header('Content-Type: application/json');
+            echo('{"result":"null"}');
+            http_response_code(400);
+        }
+
+        /*$this -> ClientModel -> deleteClients($idCliente);
+        
+        header('Content-Type: application/json');
+        echo('{"result":"true"}');  */
 
     }
 

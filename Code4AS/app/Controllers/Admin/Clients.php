@@ -7,6 +7,8 @@ class Clients extends Controller{
     
     public function index()
     {
+        //$this->output->enable_profiler(true);
+
         $clients = new ClientsModel(); 
 
         $data = [
@@ -54,14 +56,14 @@ class Clients extends Controller{
         return redirect()->route('admin/clients');
     }
 
-    public function searchAction($nome)
+    public function searchAction()
     {
-        $this->output->enable_profiler(true);
+        $request = \Config\Services::request();
         $clients = new ClientsModel(); 
-
+        $nomeX = $request->getGet('nome');
         $data = [
             'title' => 'Lista de Clientes',
-            'clients' => $clients->getSearch($nome)
+            'clients' => $clients->getSearch($nomeX)
         ];
 
         echo view('admin/templates/Header');
