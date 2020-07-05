@@ -5,7 +5,7 @@ use App\Models\ClientsModel;
 
 class Clients extends Controller{
     
-    public function index()
+    /*public function index()
     {
         //$this->output->enable_profiler(true);
 
@@ -15,6 +15,30 @@ class Clients extends Controller{
             'title' => 'Lista de Clientes',
             'clients' => $clients->getClients()
         ];
+
+        echo view('admin/templates/Header');
+        echo view('admin/clients/list',$data);
+        echo view('admin/templates/Footer');
+    }*/
+
+    public function index()
+    {
+        $request = \Config\Services::request();
+        $nomeX = $request->getGet('nome');
+        $clients = new ClientsModel(); 
+
+
+        if (!empty($nomeX)) {
+            $data = [
+                'title' => 'Lista de Clientes',
+                'clients' => $clients->getSearch($nomeX)
+            ];
+        }else {
+            $data = [
+                'title' => 'Lista de Clientes',
+                'clients' => $clients->getClients()
+            ];
+        }
 
         echo view('admin/templates/Header');
         echo view('admin/clients/list',$data);
@@ -56,11 +80,12 @@ class Clients extends Controller{
         return redirect()->route('admin/clients');
     }
 
-    public function searchAction()
+   /* public function searchAction()
     {
         $request = \Config\Services::request();
         $clients = new ClientsModel(); 
         $nomeX = $request->getGet('nome');
+        var_dump($clients->getSearch($nomeX));
         $data = [
             'title' => 'Lista de Clientes',
             'clients' => $clients->getSearch($nomeX)
@@ -70,7 +95,7 @@ class Clients extends Controller{
         echo view('admin/clients/list',$data);
         echo view('admin/templates/Footer');
         
-    }
+    }*/
 
     public function update($id)
     {

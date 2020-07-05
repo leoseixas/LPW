@@ -1,8 +1,7 @@
-<?php var_dump($clients);?>
 <h1><?=$title?></h1>
 
 <div class="col-md-12">
-    <form method="GET" action="<?=base_url("admin/clients/search-action")?>" 
+    <form method="GET" action="<?=base_url("admin/clients")?>" 
     enctype="multipart/form-data">  
     <div class="form-group">
         <label form="nome">Nome</label>

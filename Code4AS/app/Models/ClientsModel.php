@@ -21,13 +21,10 @@ class ClientsModel extends Model{
 
     public function getSearch($nome)
     {
-        $request = \Config\Services::request();
-        var_dump($request->getGet());
-        //var_dump($this->like("nome", $nome));
-        //return $this->like('nome',"teste",'both');
-        return $this->like('nome',$nome,'both');
-        var_dump($this->like('nome',$nome,'both'));
-    
+
+        $qry = $this->query("select * from clientes where nome like  '%$nome%'");
+        return $qry->getResult('array');
+
     }
 
     
