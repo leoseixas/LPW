@@ -7,7 +7,7 @@
     </div>
     <div class="form-group">
         <label form="email">E-mail</label>
-        <input type="mail" class="form-control col-md-4" name="email">
+        <input type="email" class="form-control col-md-4" name="email">
     </div>
     <div class="form-group">
         <label form="telefone">Telefone</label>
